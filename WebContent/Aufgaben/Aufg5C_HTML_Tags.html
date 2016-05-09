@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Videos</title>
+</head>
+<body>
+
+<h1>Video-Test</h1>
+
+<p>Im Firefox geht garnichts</p>
+<p>Bei Microsoft Edge geht alles </p>
+<p>Im Eclipse-Browser geht nur mov_bbb.mp4</p>
+<p>Prof. Johner fragen, warum meine Fehlermeldung nicht angezeigt wird, sondern nur: <br>
+Kein Video mit unterstützen Format und MME-Typ gefunden....bzw. im Eclipse-Browser sagt er <br>
+"Ungültige Quelle" </p>
+
+
+
+<div>
+	<form>
+		<p>Name: <input type="text" name="name" input placeholder="Name"></p>
+		<p>E-Mail-Adresse: <input type="text" name="e-mail" placeholder="E-Mail"></p>
+		<p>Hausnummer: <input type="text" name="hausnummer" placeholder="Hausnummer" min="0" max="20"></p>
+		<p>Geburtsdatum: <input type="text" name="geburtsdatum" placeholder="Geburtsdatum" max="2015-11-10"></p>
+		
+	</form>
+
+
+</div>
+
+
+
+<div> 
+<video id="video2" width="600" controls autoplay
+  source src="mov_aaa.mp4" type="video/mp4"
+  source src="mov_aaa.ogg" type="video/ogg"
+  source src="mov_aaa.webm" type="video/webm">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+
+
+
+<div> 
+
+<video width="400" controls 
+  source src="mov_bbb.mp4" type="video/mp4"
+  source src="mov_bbb.ogg" type="video/ogg"
+  source src="mov_bbb.webm" type="video/webm">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+<div> 
+<video id="video1" width="600" controls
+  source src="mov_bbb.mp4" type="video/mp4"
+  source src="mov_bbb.ogg" type="video/ogg"
+  source src="mov_bbb.webm" type="video/webm">
+  Your browser does not support HTML5 video.
+</video>
+</div>
+
+
+
+
+
+</body>
+</html>

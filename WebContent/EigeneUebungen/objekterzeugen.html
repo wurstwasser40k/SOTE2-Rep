@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Erzeugen von einem Objekt</h1>
+<!-- <img height="600" src="homer.jpg"> würde das Bild von Homer 'statisch' zeigen -->
+
+<!--Hier: Bild von Homer wird nach 5sec durch Marge ersetzt  -->
+
+<img height="600">   <!-- Kein konkretes  Bild zugewiesen  -->
+<script type="text/javascript">
+b1=new Image();   /*  erzeuge Objekt b1 der Klasse Image */
+b1.src="homer.jpg"; /* weise dem Objekt eine Quelle zu */
+b2=new Image();
+b2.src="marge.gif";
+document.images[0].src=b1.src;   /* Hänge das Bild an den Body */
+setTimeout("document.images[0].src=b2.src","5000");
+
+</script>
+</body>
+</html>

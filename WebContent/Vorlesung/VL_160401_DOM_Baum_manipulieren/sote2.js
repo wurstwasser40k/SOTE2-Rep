@@ -1,0 +1,1 @@
+alert("Hallo aus der externen Datei");

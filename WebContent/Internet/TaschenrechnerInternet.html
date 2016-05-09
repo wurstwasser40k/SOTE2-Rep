@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <title>Taschenrechner</title> 
+  <script> 
+  function Check (Eingabe) { 
+    var nur_das = "0123456789[]()-+*%/."; 
+      for (var i = 0; i < Eingabe.length; i++) 
+       if (nur_das.indexOf(Eingabe.charAt(i)) < 0) 
+         return false; 
+           return true; 
+  }
+ 
+  function Ergebnis () { 
+    var x = 0; 
+    if (Check(window.document.Rechner.Display.value)) 
+      x = eval(window.document.Rechner.Display.value); 
+     window.document.Rechner.Display.value = x; 
+   } 
+ 
+  function Hinzufuegen (Zeichen) { 
+    window.document.Rechner.Display.value = window.document.Rechner.Display.value + Zeichen; 
+  } 
+ 
+  function Sonderfunktion (Funktion) { 
+    if (Check(window.document.Rechner.Display.value)) { 
+      if (Funktion == "sqrt") { 
+        var x = 0; x = eval(window.document.Rechner.Display.value); 
+        window.document.Rechner.Display.value = Math.sqrt(x); 
+      } 
+      if (Funktion == "pow") { 
+        var x = 0; x = eval(window.document.Rechner.Display.value); 
+        window.document.Rechner.Display.value = x * x; 
+      } 
+      if (Funktion == "ln") { 
+        var x = 0; x = eval(window.document.Rechner.Display.value); 
+        window.document.Rechner.Display.value = Math.log(x); 
+       } 
+     } 
+    else window.document.Rechner.Display.value = 0
+  } 
+</script> 
+ 
+<style> 
+  body {
+    width: 30em; 
+    margin: 10px auto;
+  }
+  form {
+    width: 15em;
+    text-align: center;
+    padding: 1em 0; 
+    background: royalblue; 
+    border-radius: 0.5em;  
+    box-shadow: inset 0 0 5px white;
+    border: 1px solid darkblue;
+  }
+  output { 
+    display: block; 
+    height: 1.5em; 
+    background: white; 
+    text-align :right; 
+    font-size: 100%; 
+    padding-right: 5%; 
+    margin: 5px 6%; 
+  } 
+  fieldset {
+    border: none; 
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+  input { 
+    width: 18%; 
+    margin: 5px 2%; 
+  } 
+</style> 
+</head> 
+ 
+<body> 
+  <h1>Taschenrechner</h1>
+  <form name="Rechner" action="" onsubmit="Ergebnis();return false;"> 
+    <output name="Display" id="Display"></output> 
+    <fieldset> 
+       <input type="button" value=" 7 " onclick="Hinzufuegen('7')">
+       <input type="button" value=" 8 " onclick="Hinzufuegen('8')"> 
+       <input type="button" value=" 9 " onclick="Hinzufuegen('9')"> 
+       <input type="button" value=" + " onclick="Hinzufuegen('+')"> 
+       <input type="button" value=" 4 " onclick="Hinzufuegen('4')"> 
+       <input type="button" value=" 5 " onclick="Hinzufuegen('5')"> 
+       <input type="button" value=" 6 " onclick="Hinzufuegen('6')"> 
+       <input type="button" value=" - " onclick="Hinzufuegen('-')"> 
+       <input type="button" value=" 1 " onclick="Hinzufuegen('1')"> 
+       <input type="button" value=" 2 " onclick="Hinzufuegen('2')"> 
+       <input type="button" value=" 3 " onclick="Hinzufuegen('3')"> 
+       <input type="button" value=" * " onclick="Hinzufuegen('*')"> 
+       <input type="button" value=" 0 " onclick="Hinzufuegen('0')"> 
+       <input type="button" value=" . " onclick="Hinzufuegen('.')"> 
+       <input type="button" value=" = " onclick="Ergebnis()"> 
+       <input type="button" value=" / " onclick="Hinzufuegen('/')"> 
+       <input type="button" value="sqrt " onclick="Sonderfunktion('sqrt')"> 
+       <input type="button" value=" pow " onclick="Sonderfunktion('pow')"> 
+       <input type="button" value=" ln " onclick="Sonderfunktion('ln')"> 
+       <input type="reset"  value=" C "> 
+     </fieldset>
+  </form> 
+ 
+</body> 
+</html>
+

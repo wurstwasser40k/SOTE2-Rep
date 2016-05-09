@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Tabelle mit Infos</h1>
+
+<form>
+    
+        <table id="t1" border="6">
+                <tr><th>Symbol</th><th>Name</th><th>Preis</th></tr>
+       <!--          <tr>
+                        <td><input type="text"   name="Symbol" /></td>
+                        <td><input type="text"   name="Name" /></td>
+                        <td><input type="text"   name="Preis" /></td>
+                </tr> -->
+        </table>
+        </form>
+
+
+<script type="text/javascript">
+
+var object = {
+          "list" : {
+          "meta" : {
+            "type" : "resource-list",
+            "start" : 0,
+            "count" : 163
+            }, 
+            "resources" : [
+            {
+              "resource" : {
+                "classname" : "Quote",
+                "fields" : {
+                  "name" : "USD/KRW",
+                  "price" : "1111.300049",
+                  "symbol" : "KRW=X",
+                  "ts" : "1350021593",
+                  "type" : "currency",
+                  "utctime" : "2012-10-12T05:59:53+0000",
+                  "volume" : "663253708"
+                }
+              }
+            },
+            {
+              "resource" : {
+                "classname" : "Quote",
+                "fields" : {
+                  "name" : "SILVER 1 OZ 999 NY",
+                  "price" : "0.029372",
+                  "symbol" : "XAG=X",
+                  "ts" : "1349991010",
+                  "type" : "currency",
+                  "utctime" : "2012-10-11T21:30:10+0000",
+                  "volume" : "663253708"
+                }
+              }
+            }]
+        }
+    };
+    
+</script>
+
+    
+
+    
+    
+
+
+
+
+
+
+
+
+<!-- // /////////////////////////////////////////////////////// -->
+
+
+        
+        
+        
+                <script type="text/javascript">
+                function ad_row(symbolParameter,nameParameter,preisParameter)
+                {
+                        var table_id = "t1";
+                        var table = document.getElementById( table_id );
+                        var rows = table.getElementsByTagName( "tr" ).length;
+                        var tr = table.insertRow( rows );
+                        var td1 = document.createElement( "td" );
+                        var td2 = document.createElement( "td" );
+                        var td3 = document.createElement( "td" );
+                        var inhalt1 =document.createTextNode(symbolParameter);
+                        var inhalt2 =document.createTextNode(nameParameter);
+                        var inhalt3 =document.createTextNode(preisParameter);
+                        td1.appendChild(inhalt1);
+                        td2.appendChild(inhalt2);
+                        td3.appendChild(inhalt3);
+                        tr.appendChild( td1 );
+                        tr.appendChild( td2 );
+                        tr.appendChild( td3 );
+                }
+                
+          
+                
+                
+                
+                
+                
+                
+                var resources = object.list.resources;
+
+                var result = "";
+
+                for (r in resources){
+
+                	var symbol=resources[r].resource.fields.symbol; 
+                	var name=resources[r].resource.fields.name; 
+                	var preis=resources[r].resource.fields.price; 
+                	
+                	   ad_row(symbol,name,preis); //Funktionsaufruf
+                	
+              
+
+                }
+                    
+                    
+                    
+         
+                
+             
+        </script>
+
+
+<!-- /////////////////////////////////////////////////////// -->
+
+
+
+
+
+</body>
+</html>

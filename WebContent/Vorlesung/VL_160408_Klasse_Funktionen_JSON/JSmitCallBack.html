@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	
+	var dieFunktion = callBack;
+	lokationBestimmen(dieFunktion);  //Aufruf der Funktion lokationBestimmen()..
+									 //..dabei übergeben wir dieFunktion=callBack 
+									 //also quasi: lokationBestimmen(dieFunktion=callBack(lokation))
+	
+	
+	//Funktion, die Browser bereitstellt
+	function lokationBestimmen(f){     //lokationBestimmen hat einen Parameter.
+									   //Der Parameter ist die Funktion callBack(lokation)
+		//suche nach dem Ort, an dem wir sind
+		var ort = "Konstanz";           
+		f(ort);                        //Rufe auf: callback(ort)    mit ort="Konstanz"
+	}
+	
+
+	function callBack(lokation){
+		alert("Wir sind an dieser Lokation: " + lokation);   //gibt aus:
+															 //Wir sind an dieser Lokation: Konstanz
+	}
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

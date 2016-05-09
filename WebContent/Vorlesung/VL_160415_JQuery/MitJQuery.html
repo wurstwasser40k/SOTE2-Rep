@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="./js/jquery-2.2.3.js"></script>
+	<style>
+		.red {color:red}
+	</style>
+</head>
+<body>
+	<h1>Arbeiten mit JQuery</h1>
+	<header>
+		<p id="JQ1">Der erste Absatz</p>
+		<p id="JQ2">Der zweite Absatz</p>
+		<input type="button" onclick="austauschen()" value="klicken">
+	</header>
+	
+	<script type="text/javascript">
+		function austauschen(){
+			//Alte Variante ohne JQuery
+			document.getElementById("JQ1").innerHTML = "neuer Text";
+
+			//Neue Variante mit JAuery
+			$("p").html("Neuer Text mit JQuery");
+			
+			//Element einfügen
+			$("#JQ1").append("<p>Angehängter Text</p>");
+			
+			//Animationen
+			var options = {
+					duration:1000
+			};
+			$("#JQ2").slideUp(options);
+			
+			//CSS-Klasse austauschen/zweisen
+			$("p").addClass("red");
+		}
+		
+	
+	</script>
+</body>
+</html>

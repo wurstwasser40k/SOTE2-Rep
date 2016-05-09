@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 - Geolocation - 1</title>
+  <style>
+  </style>
+</head>
+<body>
+  <h1>HTML5 - Geolocation..Standort ermitteln</h1>
+  <div>
+    <p>Sobald Sie auf den Button klicken, werden Ihre Koordinaten ermittelt.</p>
+    <input type="button" onclick="ermittlePosition(zeigePosition)" value="Los" id="los">
+    <p id="ausgabe"></p>
+  </div>
+  
+<script type="text/javascript">
+
+
+
+
+
+
+  function zeigePosition(position) {
+	    ausgabe.innerHTML = "Ihre Koordinaten sind:<br> Breite: " + position.coords.latitude + 
+	    "<br>Länge: " + position.coords.longitude;	
+	}
+  
+  
+  /*  FRAGE AN PROF. JOHNER: WARUM DARF ICH HIER UND BEIM AUFRUF IM BUTTON AUF DEN 
+  PARAMETER zeigePosition VERZICHTEN????*/
+  
+function ermittlePosition(zeigePosition) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(zeigePosition);  //Funktionsaufruf
+    } else { 
+        ausgabe.innerHTML = 'Ihr Browser unterstützt keine Geolocation.';
+    }
+}
+ 
+
+</script>
+</body>
+</html>
+

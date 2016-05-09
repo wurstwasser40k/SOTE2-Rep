@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>XML in JSON formatieren</title>
+</head>
+<body>
+
+
+
+
+
+<h1>Einkaufsliste </h1>
+
+
+<script type="text/javascript">
+
+
+/* Überführen Sie bitte folgende XML-Datei ins JSON-Format
+<Bestellung nummer="A123">
+    <Besteller kdnr="GER">
+        <Vorname>Hans-Ulrich</Vorname>
+        <Nachname>Graf</Nachname>
+    </Besteller>
+    <Position>
+        <BestellPosition>1</BestellPosition>
+        <Produkt>
+            <Bestellnummer>A122</Bestellnummer>
+            <Name>Fön</Name>
+            <Preis>23,75</Preis>
+        </Produkt>
+    </Position>
+    <Position>
+        <BestellPosition>2</BestellPosition>
+        <Produkt>
+            <Bestellnummer>A122</Bestellnummer>
+            <Name>Tablet</Name>
+            <Preis>259</Preis>
+        </Produkt>
+    </Position>
+</Bestellung> */
+
+//in JSON:
+var object = {
+		"bestellung":{
+			"nr":"A123",
+			"besteller":{
+				"kdnr":"GER",
+				"vorname":"Hans-Ullrich",
+				"nachname":"Graf"
+			},
+			"positionen":[   
+			{//Erstes  Element des Arrays positionen
+				"bestellposition":"1",
+				"produkt":{
+					"Bestellnummer":"A122",
+					"Name":"Fön",
+					"Preis":"23,75"
+				}
+				
+			},
+			{//Zweites Element des Arrays positionen
+				"bestellposition":"2",
+				"produkt":{
+					"Bestellnummer":"A122",
+					"Name":"Tablet",
+					"Preis":"259"
+				}
+			},
+			]
+			
+			
+			
+		}//schließende Klammer bestellung
+		
+}; //schließende Klammer object
+		
+		
+		
+		
+
+		
+
+
+
+
+
+var resources = object.bestellung.positionen;   //Das ist ein Array der Länge 2
+
+var result = "";
+
+
+
+for (r in resources){
+	result=resources[r].produkt.Name;
+	alert(result);
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

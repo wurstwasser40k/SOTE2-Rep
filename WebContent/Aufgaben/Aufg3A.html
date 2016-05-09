@@ -1,0 +1,69 @@
+
+<!-- Schreiben Sie eine einfache HTML Seite, die ein
+ Formular enthält. In dieses Formular kann man Text
+eingeben. Sobald man einen Button klickt, wird dieser Text
+ in die HTML-Seite eingefügt.  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Eine einfache HTML Seite</title>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+function neuesListenElement(){
+	var wert = document.getElementById("myInput1").value;
+	
+    //Neues HTML-Element einfügen
+    var knoten = document.createElement("li");
+    var inhalt = document.createTextNode(wert);
+    
+    knoten.appendChild(inhalt);
+    document.getElementById("meineListe").appendChild(knoten);
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+<h1> Eine einfache HTML Seite </h1>
+<p> Aufgabe:Schreiben Sie eine einfache HTML Seite, die ein
+ Formular enthält. In dieses Formular kann man Text
+eingeben. Sobald man einen Button klickt, wird dieser Text
+ in die HTML-Seite eingefügt</p>
+ 
+ Die Website wurde zuletzt am
+ <script type="text/javascript">
+ document.write(new Date())
+ </script>
+ aktualisiert
+ 
+<form>
+<p> <input type="text" id="myInput1"> </p>
+<p> <input type="button" onclick="neuesListenElement()" value="Neues Element in Liste erzeugen"> </p>
+</form>
+
+<ul id="meineListe">
+<li >asdas </li> 
+</ul>
+
+
+
+</body>
+</html>

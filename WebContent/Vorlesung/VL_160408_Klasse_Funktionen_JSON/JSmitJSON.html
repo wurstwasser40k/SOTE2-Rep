@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+	var object = {
+			"name": "Max",
+			"matrikel": 123,
+			"studiengang": {
+					"name":"BIT",
+					"vorlesungen": ["SOTE1", "SOTE2"]
+				},
+			"semester":3,
+			"bestanden":false
+		}
+
+		alert("Der Studiengang von " + object.name + " heißt " + object.studiengang.name);
+		
+		var faecher = object.studiengang.vorlesungen;
+		var ergebnis = "";
+		for(fach in faecher){
+			ergebnis = ergebnis + faecher[fach] + " "; 
+		}
+		
+		alert("Max studiert diese Fächer " + ergebnis +  " am liebsten " + object.studiengang.vorlesungen[1]);
+	
+		//JSON aus String
+		var text = "{'titel':'Name der Rose', 'isbn': 123}";
+		var buch = eval("(" + text + ")");
+		alert("Das Buch hat den Titel " + buch.titel);
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

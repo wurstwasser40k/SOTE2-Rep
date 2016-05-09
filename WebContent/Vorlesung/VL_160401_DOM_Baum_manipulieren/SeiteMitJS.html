@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">   
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function austauschen() {
+				var wert = document.getElementById("inputfeld").value;
+				//Variante 1: Direkt Inhalt von HTML-Element ersetzen
+				document.getElementById("li1").innerHTML = wert;	
+				
+				//Variante 2: Neue HTML-Elemente hinzufügen
+				var knoten = document.createElement("li");
+				var inhalt = document.createTextNode(wert);
+				knoten.appendChild(inhalt);
+				document.getElementById("uli").appendChild(knoten);				
+			}
+			
+		</script>
+		
+</head>
+<body>
+	<!-- ein Kommentar -->
+	<h1>Seite mit JavaScript</h1>
+	<p>Ein erster Absatz</p>
+	<ul id="uli">
+		<li id="li1">Listenelement 1</li>
+		<li>Listenelement 2</li>
+	</ul>
+	<p><input type="text" name="ip" id="inputfeld"></p>
+	<input type="button" onclick="austauschen()" value="log los">
+</body>
+</html>

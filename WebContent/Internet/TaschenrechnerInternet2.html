@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>taschenrechner</title>
+<meta name="description" content="Taschenrechner">
+
+<script type="text/javascript">
+function calc()
+{
+  var wert1 = document.getElementById('ziffer1').value;
+/*   console.log(wert1); */
+  var wert2 = document.getElementById('ziffer2').value;
+/*   console.log(wert2); */
+  var select = document.getElementById('rb').value;
+/*   console.log(select); */
+  var summe = eval(wert1 + select + wert2)
+/*   console.log(summe); */
+  document.getElementById('sum').value = summe;
+}
+</script>
+</head>
+
+<body>
+	<form name="calC">
+
+		<input type='text' id='ziffer1' size="5" maxlength="5"> 
+		<select size="1" name="rb" id='rb'>
+			<option value="+" selected="selected">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select> <input type='text' id='ziffer2' size="5" maxlength="5">
+		 <input type="button" name="Submit" value="=" onclick="calc()">
+		  <input type='text' id='sum'>
+	</form>
+</body>
+</html>

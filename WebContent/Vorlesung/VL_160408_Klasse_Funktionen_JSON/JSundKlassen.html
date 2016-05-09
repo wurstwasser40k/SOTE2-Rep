@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		//Arbeiten mit Klassen und Objekten
+		//Variante 1
+		var student1 = new Object();
+		student1.name = "Max";
+		student1.matrikel = 123;
+		student1.immatrikulieren = function(dasdatum){
+			datum = dasdatum;
+			alert("Immatrikulationsdatum = " + datum);
+		}
+		student1.immatrikulieren("2016");
+		
+		//alert("Der Student heißt " + student1.name);
+		
+		//Variante 2
+		function Student(dername, diematrikel){
+			this.name = dername;
+			this.matrikel = diematrikel;
+		}
+		
+		var student2 = new Student("Julia", 234);
+		//alert("Die Studentin heißt " + student2.name);
+		
+		//Variante 3: Mit JSON
+		var student3 = {name:"Jakob", matrikel:456};
+		//alert("Der Student heißt " + student3.name);
+	
+	</script>
+	
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+function speichern() {
+	     
+	/* ...Speichert einen Wert mit dem dazugehörigen Schlüssel.
+      	    localStorage.setItem('key', 'value');    */
+			localStorage.setItem("nachricht1", document.Formular.nachricht1.value); 
+			localStorage.setItem("nachricht2", document.Formular.nachricht2.value);
+		}
+		
+function ausgeben1() {
+    
+	/* Gibt den Wert des dazugehörigen Schlüssels zurück. Existiert dieser
+	Schlüssel nicht wir "undefined" zurückgegeben.
+		                                 localStorage.getItem('key'); */
+		                                 
+		                                 
+	//hier wird der jeweilige Schlüssel im input-Text zurückgegeben 	                                 
+ 	document.Formular.nachricht1.value = localStorage.getItem("nachricht1");
+	document.Formular.nachricht2.value = localStorage.getItem("nachricht2");  
+	
+ 	document.getElementById("einfuegen1").innerHTML = document.getElementById("nachr1").value;
+	document.getElementById("einfuegen2").innerHTML = document.getElementById("nachr2").value; 
+}
+
+function ausgeben2() {
+    
+	/*Gibt den Wert des dazugehörigen Schlüssels zurück. Existiert dieser
+	Schlüssel nicht wir "undefined" zurückgegeben.
+		                                 localStorage.getItem('key'); 
+	*/
+		                                 
+		                                
+	
+ 	document.getElementById("einfuegen1").innerHTML = localStorage.getItem("nachricht1");
+	document.getElementById("einfuegen2").innerHTML = localStorage.getItem("nachricht2");
+}
+		
+</script>
+
+
+<body>
+
+  <h1>Local Storage</h1>
+    <p>Bitte geben Sie hier Werte ein:</p>
+    <form name="Formular">
+        <p><input type="text" name="nachricht1" id="nachr1"></p>
+        <p><input type="text" name="nachricht2" id="nachr2"></p>
+        
+        <p><button type="button"  onclick="speichern()">Speichern</button></p>
+        <p><button type="button" onclick="ausgeben1()">Ausgeben</button></p>
+        <p><button type="button" onclick="ausgeben2()">Ausgeben Andere Variante</button></p>
+        <p>Inhalt des ersten Textfeldes ist:  <br><div id="einfuegen1"></div></p>
+        <p>Inhalt des zweiten Textfeldes ist: <br><br><div id="einfuegen2"></div></p>
+    </form>
+
+
+
+</body>
+</html>

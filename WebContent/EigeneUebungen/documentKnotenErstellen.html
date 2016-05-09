@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Knoten mit document erstellen</title>
+</head>
+<body>
+<script type="text/javascript">
+
+/* Speicher einen Arrtibutknoten (ein node-Objekt) in der Variable hintergrundfarbe*/
+/* Der Attributknoten dient für die Angabe einer Hintergrunfarbe einer Website über 
+ * das Attribut bgcolor */
+var hintergrundfarbe=document.createAttribute("bgcolor");
+/* Bis jetzt besitzt der Attribnutknoten noch keinen Wert..mit 
+ * hintergrundfarbe.nodeValue="..." ändern wir das */
+hintergrundfarbe.nodeValue="blue";
+
+/* Speicher einen Arrtibutknoten (ein node-Objekt) in der Variable vordergrundfarbe*/
+var vordergrundfarbe=document.createAttribute("text");
+/* Setze Wert für den Attribnutknoten */
+vordergrundfarbe.nodeValue="white";
+
+
+/* Bis jetzt: Attributknoten existieren, sind aber
+ * noch nicht der Website hinzugefügt worden !...*/
+
+
+ /* setAttributeNode() -> Fügt die beiden Attributknoten dem body an!   */
+document.getElementsByTagName("body")[0].setAttributeNode(hintergrundfarbe);
+document.getElementsByTagName("body")[0].setAttributeNode(vordergrundfarbe);
+
+
+/* Erzeuge Elementknoten, speicher diesen in der Variable u1  */
+var u1=document.createElement("h1");
+/* Erzeuge Textknoten, speicher den in der Variable Text. */ 
+var text= document.createTextNode("Erstellen von Knoten mit Methoden von document");
+
+/* Exkurs: So könnte man den Text des Textknotens überschreiben:
+text.nodeValue="Text wurde überschrieben";
+ */
+
+ 
+ /* Problem: Weder Elementknoten noch Textknoten sind dem Body zugeordnet, und 
+ zwischen ElementNode und TextNode besteht keine Verbindung*/
+ 
+/* Hänge den TextNode text an den ElementNode u1  */
+u1.appendChild(text); 
+/* Hänge das ElementNode u1 an den body  */
+document.getElementsByTagName("body")[0].appendChild(u1);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>taschenrechner</title>
+<meta name="description" content="Taschenrechner">
+
+<script type="text/javascript">
+function addiere(){
+  var wert1 = document.getElementById('ziffer1').value;
+  wert1=Number(wert1);
+  var wert2 = document.getElementById('ziffer2').value;
+  wert2=Number(wert2);
+
+  var summe = wert1+wert2;
+
+  document.getElementById('ergebnis').value = summe;
+}
+
+
+function subtrahiere(){
+	  var wert1 = document.getElementById('ziffer1').value;
+	  wert1=Number(wert1);
+	  var wert2 = document.getElementById('ziffer2').value;
+	  wert2=Number(wert2);
+
+	  var summe = wert1-wert2;
+
+	  document.getElementById('ergebnis').value = summe;
+	}
+	
+function dividiere(){
+	  var wert1 = document.getElementById('ziffer1').value;
+	  wert1=Number(wert1);
+	  var wert2 = document.getElementById('ziffer2').value;
+	  wert2=Number(wert2);
+
+	  var summe = wert1/wert2;
+
+	  document.getElementById('ergebnis').value = summe;
+	}
+
+function multipliziere(){
+	  var wert1 = document.getElementById('ziffer1').value;
+	  wert1=Number(wert1);
+	  var wert2 = document.getElementById('ziffer2').value;
+	  wert2=Number(wert2);
+
+	  var summe = wert1*wert2;
+
+	  document.getElementById('ergebnis').value = summe;
+	}
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<form>
+<p>Eingabefelder</p>
+<p>
+
+		<input type="text" id="ziffer1" size="5" maxlength="5"> 
+		<input type="text" id="ziffer2" size="5" maxlength="5">
+</p>
+<p>
+		<input type="button" name="Submit" value="+" onclick="addiere()">
+		<input type="button" name="Submit" value="-" onclick="subtrahiere()">
+		<input type="button" name="Submit" value="/" onclick="dividiere()">
+		<input type="button" name="Submit" value="*" onclick="multipliziere()">
+        <input type="reset"  value="Alle Felder löschen"> 
+</p>
+<p>
+        <p>Ergebnis</p>
+		<input type="text" id="ergebnis" >
+</p>
+	</form>
+
+
+</body>
+</html>

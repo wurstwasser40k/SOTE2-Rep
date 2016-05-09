@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Spielerei 1</title>
+</head>
+<body>
+
+<h1> Zugriffsmöglichkeiten auf DOM-Objekte </h1>
+
+
+
+ <script type="text/javascript">
+alert("Zugriffsmöglichkeiten auf DOM-Objekte");
+
+
+
+with(document){
+	open();
+	write("Zugriffsmöglichkeiten");
+	write("auf");
+	write("DOM-Objekte");
+	close();
+}
+</script>
+
+
+<p>getElementsByName  ..bietet sich gerade bei Web-Formularen an,
+ da die Eingabefelder eh einen Namen haben müssen</p>
+<p>Hier Passwort eingeben</p>
+<form action="" method="" accept-charset="utf-8">
+<input type="password" name="passwort"  /><br/> 
+<input type="button" value="Hau weg" name="ok"> 
+</form>
+
+<script type="text/javascript">
+document.getElementsByName("ok")[0].onclick=function(){
+	alert(document.getElementsByName("passwort")[0].value);
+};
+
+
+
+</script>
+
+
+
+
+
+<p>getElementById</p>
+<p>Hier Name eingeben</p>
+<form action="" method="" accept-charset="utf-8">
+<input type="text" id="myUser"  /><br/  > 
+<input type="button" value="Hau weg" id="userAusgabe"> 
+</form>
+<script type="text/javascript">
+document.getElementById("userAusgabe").onclick=function(){
+	alert(document.getElementById("myUser").value);
+};
+</script>
+
+
+
+<!-- getElementsByTagName -->
+<p>getElementsByTagName</p>
+<p>Hier Strasse und Hausnummer eingeben</p>
+<form action="" method="" accept-charset="utf-8">
+<input type="text"   /><br/  > 
+<input type="button" value="Hau weg" > 
+</form>
+
+<script type="text/javascript">
+document.getElementsByTagName("input")[5].onclick=function(){
+	alert(document.getElementsByTagName("input")[4].value);
+};
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

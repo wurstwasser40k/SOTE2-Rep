@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0;" />
+  <link rel="stylesheet" media="screen" href="./Beispiel:SELFHTML-Beispiel-Grundlayout.css" />
+  <title>HTML5 - Geolocation - 1</title>
+  <style>
+  </style>
+</head>
+<body>
+  <h1>HTML5 - Geolocation<br>Ihren Standort ermitteln</h1>
+  <div>
+    <p>Sobald Sie auf den Button klicken, werden Ihre Koordinaten ermittelt.</p>
+    <button id="los">Los!</button>
+    <p id="ausgabe"></p>
+  </div>
+  
+<script type="text/javascript">
+  var button =document.getElementById('los'); 
+  button.addEventListener ('click', ermittlePosition);
+  var ausgabe = document.getElementById('ausgabe');
+ 
+  
+  function zeigePosition(position) {
+	    ausgabe.innerHTML = "Ihre Koordinaten sind:<br> Breite: " + position.coords.latitude + 
+	    "<br>Länge: " + position.coords.longitude;	
+	}
+  
+  
+function ermittlePosition() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(zeigePosition);
+    } else { 
+        ausgabe.innerHTML = 'Ihr Browser unterstützt keine Geolocation.';
+    }
+}
+ 
+
+</script>
+</body>
+</html>
+

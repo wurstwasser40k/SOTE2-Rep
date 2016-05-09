@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+</head>
+
+<body>
+<form>
+        <br /><br />
+        <table id="t1" border="6">
+                <tr><th>Symbol</th><th>Name</th><th>Euro/Preis</th></tr>
+                <tr>
+                        <td><input type="text"   name="Symbol" /></td>
+                        <td><input type="text"   name="Name" /></td>
+                        <td><input type="text"   name="Preis" /></td>
+                </tr>
+        </table>
+        <br /><br />
+        <input type="button" value="Eintrag hinzufügen" onclick="ad_row()" />
+        <br /><br />
+        <br /><input type="submit" value="OK"/>
+        </form>
+        
+        
+        
+                <script type="text/javascript">
+                function ad_row()
+                {
+                        var table_id = "t1";
+                        var table = document.getElementById( table_id );
+                        var rows = table.getElementsByTagName( "tr" ).length;
+                        var tr = table.insertRow( rows );
+                        var td1 = document.createElement( "td" );
+                        var td2 = document.createElement( "td" );
+                        var td3 = document.createElement( "td" );
+                        td1.innerHTML = '<input type="number" name="Symbol" />';
+                        td2.innerHTML = '<input type="text" name="Name" />';
+                        td3.innerHTML = '<input type="text" name="Preis" />';
+                        tr.appendChild( td1 );
+                        tr.appendChild( td2 );
+                        tr.appendChild( td3 );
+                }
+        </script>
+        
+        
+        
+
+</body>
+</html>

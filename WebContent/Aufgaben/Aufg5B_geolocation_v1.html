@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+
+//Funktionsaufruf
+useCallback(zeigePosition);   //Aufruf der Funktion useCallback(zeigePosition)..
+							  //dabei übergeben wir den Parameter zeigePosition
+
+
+
+function useCallback(irgendeineBeliebigeCallback){
+	
+	   if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(zeigePosition); 
+	    } else { 
+	        ausgabe.innerHTML = 'Ihr Browser unterstützt keine Geolocation.';
+	    }
+	
+}
+
+
+function zeigePosition(position){
+	ausgabe.innerHTML = "Ihre Koordinaten sind:<br> Breite: " + position.coords.latitude + 
+    "<br>Länge: " + position.coords.longitude;	
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+  <p id="ausgabe"></p>
+
+
+</body>
+</html>

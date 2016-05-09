@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- ////////////////////////////////////Beginn-CSS////////////////////// -->
+ <style>
+.classDropButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;    /*  verändert den Mouse-Cursor */
+}
+
+.classDropButton:hover, .classDropButton:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-inhalt {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-inhalt a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+<!-- ////////////////////////////////////Ende-CSS////////////////////// -->
+</head>
+
+
+<body>
+
+<h2>Klickbares Dropdown-Menü</h2>
+<p>Button klicken, damit sich das Dropdown-Menü öffnet</p>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="classDropButton">Dropdown</button>
+
+<!-- Das eigentliche aufklappbare Fenster ist quasi ein div im div -->
+  <div id="myDropdown" class="dropdown-inhalt">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+ <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    //Schaltet das div mit id="myDropdown" den Klassenwert "show" zu.
+    //Details:
+    //The Element.classList is a read-only property which returns a live DOMTokenList
+    //collection of the class attributes of the element.
+    //Methode toggle: toggle ( String [, force] )
+    //When only one argument is present: Toggle class value; i.e., if class exists then remove it, if not, then add it.
+    //When a second argument is present: If the second argument is true, add specified class value, and if it is false, remove it.
+    
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+   if (event.target.matches('.classDropButton')==false) {
+	  //hier...: Wenn alles andere als der Button geklickt wurde, dann mache folgendes:
+	  //event.target.nodeName...liefert beispielsweise den Knotennamen
+	  
+
+    //getElementsByClassName gibt ein Array-ähnliches Objekt von allen
+    //Kindelementen welche den gegebenen Klassennamen besitzen.
+/*  DieKlasse dropdown-inhalt hat folgende Kinder:
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    ..ist also ein Array mit drei Objekten
+*/
+    var dropdowns = document.getElementsByClassName("dropdown-inhalt");
+   
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {  //durchlaufe den Array dropdowns
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {  
+    	  //The Element.classList is a read-only property which returns
+    	  //a live DOMTokenList collection of the class attributes of 
+    	  //the element.
+    	  //.contains("irgendeinString") ...Checks if specified class value
+    	  //exists in class attribute of the element.
+    	  
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script> 
+ 
+</body>
+</html>

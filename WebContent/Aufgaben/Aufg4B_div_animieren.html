@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JQuery - Aufgabe 4b</title>
+
+
+<script type="text/javascript" src="./js/jquery-2.2.3.js"></script>
+
+<style>
+#div1 {background-color: yellow}
+#div2 {background-color: orange}
+</style>
+
+</head>
+<body>
+
+<div id="div1">
+<p>Das ist ein div-Element </p>
+</div>
+
+<div id="div2">
+<p>Das ist ein anderes div-Element </p>
+</div>
+
+<form>
+<input type="button" name="submit" value="slideUp() - sofort" onclick="slideUpFast()">
+<input type="button" name="submit" value="slideUp() - mit Verzögerung" onclick="slideUpSlow()">
+
+<input type="button" name="submit" value="animate() - Größe ändern" onclick="animateSize()">
+<input type="button" name="submit" value="animate() - verkleiner das obere div" onclick="makeUpperSmaller()">
+</form>
+
+<script type="text/javascript" >
+
+function slideUpFast(){
+	$("div").slideUp();
+}
+
+//JSON-Objekt 
+var jsonObjektduration = {
+		duration: 4000
+		
+};
+function slideUpSlow(){
+	$("div").slideUp(jsonObjektduration);
+}
+
+
+var styleObjekt1 = {
+		height: "300px",
+		fontSize: "40",
+		};
+
+var styleObjekt2 = {
+		height: "300px",
+		width: "300px",
+		fontSize: "90",
+		};
+
+
+function animateSize(){
+	alert("Only numeric values can be animated (like margin:30px)."+
+			"String values cannot be animated (like background-color:red),"+
+			"except for the strings show, hide and toggle. These values allow"+
+			"hiding and showing the animated element.");
+	$("div").animate( styleObjekt2, jsonObjektduration  );
+ 	$("div").animate( {height: "100px"}  );
+	$("div").animate( {height: "500px"}  ); 
+	$("div").animate( {height: "300px"}  );
+ 	$("div").animate( {height: "100px"}  );
+	$("div").animate( {height: "500px"}  ); 
+	$("div").animate( styleObjekt1, jsonObjektduration  );
+ 	$("div").animate( {height: "100px"}  );
+	$("div").animate( {height: "500px"}  ); 
+	$("div").animate( {height: "300px"}  );
+ 	$("div").animate( {height: "100px"}  );
+	$("div").animate( {height: "500px"}  ); 
+} 
+
+
+//Frage: Warum hoppst das so?
+function makeUpperSmaller(){
+	$("#div1").animate({width: "-=500px"} );
+}
+
+</script>
+
+
+</body>
+</html>

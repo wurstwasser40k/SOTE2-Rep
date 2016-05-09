@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var dieFunktion = callBack;
+		lokationBestimmen(dieFunktion); 	//quasi: lokationBestimmen(dieFunktion=callBack(lokation))
+
+		function lokationBestimmen(f) { 	//lokationBestimmen hat einen Parameter..
+											//der Parameter ist die Funktion callBack(lokation)
+
+	
+		
+		
+
+			var ort = "Konstanz";
+			f(ort);
+		}
+
+		//Funktion, die wir aufrufen
+		function callBack(lokation) {
+			alert("Wir sind hier: " + lokation);
+		}
+	</script>
+
+</body>
+</html>

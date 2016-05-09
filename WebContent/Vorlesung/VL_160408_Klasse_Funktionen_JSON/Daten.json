@@ -1,0 +1,12 @@
+{
+	"name": "Max",
+	"matrikel": 123,
+	"studiengang": {
+			"name":"BIT",
+			"vorlesungen": ["SOTE1", "SOTE"]
+		},
+	"semester":3,
+	"bestanden":false
+}
+
+

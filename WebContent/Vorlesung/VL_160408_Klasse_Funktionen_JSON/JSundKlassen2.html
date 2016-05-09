@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var auto = new Auto("BMW", 123);
+		auto.tanken(20);
+		alert("Autotyp:" + auto.typ);
+		
+		
+		function Auto(typ, fahrgestellnummer){
+			typ = typ;
+			this.fahrgestellnummer = fahrgestellnummer;
+			this.tankfuellung = 0;
+			
+			this.tanken = function(liter){
+				this.tankfuellung = this.tankfuellung + liter;
+				alert("Die Tankfuellung von Auto " + typ + " ist " + this.tankfuellung);
+			}
+		}
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>
